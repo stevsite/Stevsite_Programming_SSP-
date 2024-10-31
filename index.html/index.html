@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+    <link rel="icon" href="download3.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Ku-style mwili */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background:url(lock4.jpg);
+            color: #333;
+        }
+
+        /* Container ya Login */
+    
+
+        /* Picha ya juu kwenye login container */
+        .login-container img {
+            width: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        /* Input za username na password */
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Login button */
+        button {
+            padding: 12px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Link ya forgot password */
+        .forgot-password {
+            margin-top: 10px;
+            display: block;
+            font-size: 14px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        /* Sticker ya chini */
+        .sticker {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 50px;
+        }
+
+
+
+
+
+        
+
+
+/* Animation ya sliding kutoka chini */
+@keyframes slideUp {
+    from {
+        transform: translateY(100vh); /* Anza kutoka nje ya screen (chini kabisa) */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* Malizia kwenye nafasi ya kawaida */
+        opacity: 1;
+    }
+}
+
+/* Tumia animation kwenye login card */
+.login-card {
+    width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideUp 1s ease-out; /* Weka uhuisho wa sekunde 1 */
+    transform: translateY(0);
+    position: relative;
+    text-align: center;
+    padding: 30px;
+   
+
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    position: relative;
+}
+
+
+.modal-content  {
+
+    text-align: center;
+    animation: slideUp 1s ease-out; /* Weka uhuisho wa sekunde 1 */
+    transform: translateY(0);
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+    
+
+
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            background-color: #2e1a1a;
+        }
+        .nav-link, .navbar-brand, .dropdown-item {
+            color: white !important;
+        }
+        .nav-link:hover, .dropdown-item:hover {
+            color: #FFD700 !important;
+        }
+        .animated-text {
+            font-size: 16px;
+            color: #FFD700;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+        .animated-text span {
+            display: inline-block;
+            position: absolute;
+            animation: moveText 10s linear infinite;
+        }
+        @keyframes moveText {
+            0% { left: 100%; }
+            100% { left: -100%; }
+        }
+        /* Left-to-Right Slide Menu */
+        .offcanvas-start {
+            width: 250px;
+            background-color: #2e1a1a;
+            color: white;
+        }
+    </style>
+
+
+
+
+
+    
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top"  >
+        <div class="container">
+            <a class="navbar-brand" href="#" style="font-family: 'Times New Roman', Times, serif; font-weight: bold;">Stevsite  Programming Learning  Code</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"  style="font-family: 'Times New Roman', Times, serif;">
+                    <li class="nav-item"><a class="nav-link" href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services"><i class="fas fa-cogs"></i> Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item animated-text">
+                        <span>Experience the best service worldwide!</span>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user-circle" title="Login"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-sign-out-alt" title="Logout"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-cart" title="Cart"></i></a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown">Language</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Swahili</a></li>
+                            <li><a class="dropdown-item" href="#">French</a></li>
+                            <li><a class="dropdown-item" href="#">German</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Left-to-Right Slide Out Menu for Mobile -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel" >
+        <div class="offcanvas-header"  >
+            <h5 class="offcanvas-title" id="mobileNavLabel">Menu</h5>
+            <button type="button" class="btn btn-danger w-50" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
+        </div>
+        <div class="offcanvas-body" >
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user-circle" title="Login"></i> Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-sign-out-alt" title="Logout"></i> Logout</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-cart" title="Cart"></i> Cart</a></li>
+            </ul>
+            <!-- Cancel Button at Bottom -->
+            <div class="mt-4">
+                <button class="btn btn-danger w-50" onclick="window.location.href='your_cancel_page.html'">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS for responsive behavior -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+
+    
+    <div class="container mt-3">
+      <h1 style="color: white; font-family: 'Times New Roman', Times, serif;  font-weight: bold;  font-size: 40px;"  >Welcome to Stevsite Programming</h1>
+      <h4   style="color: white; font-family: 'Times New Roman', Times, serif;" >Click on the button to Login Account</h4>
+      
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"  style="width: 25%;">
+        Login
+    </div>
+    
+
+
+
+
+
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+    <div class="modal-dialog">
+
+
+   <div class="modal-content">
+
+
+    <!-- Modal body -->
+    <div class="modal-body">      
+    <!-- Sticker/Picha ya juu -->
+    <img src="login.jpeg" alt="User Avatar">
+    
+    <h2  style="font-weight: bold;">Login</h2>
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="login()">Login</button>
+    
+    <!-- Link ya Forgot Password -->
+    <a href="forgot_password.html" class="forgot-password">Forgot Password?</a>
+  
+    
+
+            
+        </div>
+      </div>
+    </div>
+    
+    
+
+
+
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Mfano wa credentials za login - unaweza kuzibadilisha na za kwako
+            if(username === "user" && password === "1234") {
+                // Redirect kwenda dashboard.html kama login ni sahihi
+                window.location.href = "dashboard.html";
+            } else {
+                alert("Username or Password is not Correct.");
+            }
+        }
+    </script>
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/672243e04304e3196adab327/1ibeti9ug';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+  
+
+
+
+
+
+
+
+</body>
+</html>
